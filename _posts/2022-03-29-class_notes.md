@@ -8,3 +8,7 @@
 - patch = update
 - delete = delete
 
+**For app dev 2 there is a different repository: repo vanilla-rails**
+all repos here: https://github.com/orgs/appdev-projects/repositories?type=all
+vanilla-rails: https://github.com/appdev-projects/vanilla-rails
+
