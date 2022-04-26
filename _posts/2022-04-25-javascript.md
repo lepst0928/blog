@@ -1,3 +1,8 @@
+---
+layout: post
+title:04-25 Javascript Notes [4/25/22]
+---
+
 # Week 4 Notes - Intro to JavaScript
 General Notes (from Scrimba videos):
 > no javascript is secure or private
