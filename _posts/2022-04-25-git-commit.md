@@ -1,3 +1,8 @@
+---
+layout: post
+title:04-25 Git Commit Notes [4/25/22]
+---
+
 # Week 4 Notes - Git Commits
 > https://chapters.firstdraft.com/chapters/859
 
