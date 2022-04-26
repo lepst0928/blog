@@ -1,3 +1,8 @@
+---
+layout: post
+title:04-25 In Class Notes [4/25/22]
+---
+
 # Week 4 Notes - Check in
 
 **Remember:** always start with routes (user is taking an action, doing something that we don't want)
