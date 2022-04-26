@@ -1,3 +1,8 @@
+---
+layout: post
+title:04-05 In Class Notes [4/05/22]
+---
+
 # In Class Notes
 -Need to add authentication line now (think phishing - you do not want to delete other accounts, etc)
 > "cross-site request forgery"
