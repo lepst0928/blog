@@ -160,3 +160,90 @@ export default function Form() {
     )
 }
 ```
+
+- for submit include preventDefault() so it does not rerender the page, etc
+ function handleSubmit(event) {
+        event.preventDefault()
+        submitToApi(formData)
+    }
+    
+
+- What is a "side effect" in React? What are some examples?
+	- Any code that affects an outside system.
+	- local storage, API, websockets, two states to keep in sync
+
+- What is NOT a "side effect" in React? Examples?
+	- Anything that React is in charge of.
+	- Maintaining state, keeping the UI in sync with the data, render DOM elements
+- When does React run your useEffect function? When does it NOT run
+   the effect function?
+	- As soon as the component loads (first render)
+	- On every re-render of the component (assuming no dependencies array)
+	- Will NOT run the effect when the values of the dependencies in the array stay the same between renders
+- How would you explain what the "dependecies array" is?
+	- Second paramter to the useEffect function
+	- A way for React to know whether it should re-run the effect function
+
+- making API calls in React
+	- use effect hook (https://reactjs.org/docs/hooks-effect.html)
+
+```
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(1)
+    
+    /**
+     * Challenge: Combine `count` with the request URL
+     * so pressing the "Get Next Character" button will
+     * get a new character from the Star Wars API.
+     * Remember: don't forget to consider the dependencies
+     * array!
+     */
+    
+    React.useEffect(function() {
+        console.log("Effect ran")
+        fetch(`https://swapi.dev/api/people/${count}`)
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [count])
+    
+    return (
+        <div>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Get Next Character</button>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}
+```
+
+- window tracker (scrimba) removeEventListener example
+```react
+
+import React from "react"
+
+export default function WindowTracker() {
+    
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    
+    React.useEffect(() => {
+        function watchWidth() {
+            console.log("Setting up...")
+            setWindowWidth(window.innerWidth)
+        }
+        
+        window.addEventListener("resize", watchWidth)
+        
+        return function() {
+            console.log("Cleaning up...")
+            window.removeEventListener("resize", watchWidth)
+        }
+    }, [])
+    
+    return (
+        <h1>Window width: {windowWidth}</h1>
+    )
+}
+```
