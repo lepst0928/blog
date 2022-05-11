@@ -45,3 +45,5 @@ end
 ```
     
 
+**{} is how you execute javascript (like erb tags in ruby)**
+
