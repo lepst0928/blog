@@ -5,7 +5,7 @@ title: React Notes [5/5/22]
 
 # Week 6 Notes - React
 
-```React
+```javascript
 ReactDOM.render(
     <ul><li>Thing 1</li><li>Thing 2</li></ul>,
     document.getElementById("root")
@@ -35,7 +35,7 @@ ReactDOM.render(
 
 
 - use **callback functions** to update state: 
-``` 
+```javascript 
 function add() {
         setCount(prevCount => prevCount + 1)}
 ```
@@ -45,7 +45,7 @@ function add() {
 
 
 - example box challenge from scrimba: (switch colors when clicked)
-```react 
+```javascript 
 import React from "react"
 import boxes from "./boxes"
 import Box from "./Box"
@@ -96,7 +96,7 @@ export default function Box(props) {
 
 - example form with checkbox:
 
-```react
+```javascript
 export default function Form() {
     const [formData, setFormData] = React.useState(
         {
@@ -187,7 +187,7 @@ export default function Form() {
 - making API calls in React
 	- use effect hook (https://reactjs.org/docs/hooks-effect.html)
 
-```
+```javascript
 import React from "react"
 
 export default function App() {
@@ -220,7 +220,7 @@ export default function App() {
 ```
 
 - window tracker (scrimba) removeEventListener example
-```react
+```javascript
 
 import React from "react"
 
